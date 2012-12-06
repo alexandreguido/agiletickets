@@ -3,6 +3,11 @@ package br.com.caelum.agiletickets.models;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.List;
+
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
+import org.joda.time.Period;
 import org.junit.Test;
 
 public class EspetaculoTest {
@@ -80,4 +85,22 @@ public class EspetaculoTest {
 
 		return sessao;
 	}
+	
+	@Test
+	public void validaCriarSessoes(){
+	//LocalDate inicio, LocalDate fim, LocalTime horario, Periodicidade periodicidade) {
+		// ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
+		LocalDate inicio = new LocalDate().withDayOfMonth(1).withMonthOfYear(1).withYear(2012);
+		LocalDate fim =new LocalDate().withDayOfMonth(1).withMonthOfYear(1).withYear(2012);
+		LocalTime horario = new LocalTime();
+		
+		Periodicidade period = Periodicidade.DIARIA;
+		
+		Espetaculo show = new Espetaculo();
+		List<Sessao> sessoes = show.criaSessoes(inicio, fim, horario, period);
+			assertFalse(sessoes.size()!=1);
+		
+		
+	}
+	
 }
