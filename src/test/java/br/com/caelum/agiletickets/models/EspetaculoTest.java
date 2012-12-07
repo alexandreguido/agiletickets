@@ -99,7 +99,8 @@ public class EspetaculoTest {
 		
 		Espetaculo show = new Espetaculo();
 		List<Sessao> sessoes = show.criaSessoes(inicio, fim, horario, period);
-		assertFalse(sessoes.size()!=1);
+		//assertFalse(sessoes.size()!=1);
+		assertTrue(sessoes.size()!=1);
 		
 		List<Double> list = new ArrayList<Double>();
 		for (int i=0; i<100; i++){
